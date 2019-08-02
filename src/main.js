@@ -1,10 +1,16 @@
 import Vue from 'vue'
 import App from './App.vue'
-
+// 引入element-ui组件
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-
+// 引入路由用@可以自动去文件夹下找文件
 import router from '@/router'
+// 引入全局样式
+import '@/style/index.less'
+// 引入axios
+import axios from 'axios'
+Vue.prototype.$http = axios
+
 Vue.config.productionTip = false
 
 Vue.use(ElementUI)
