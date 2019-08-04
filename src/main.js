@@ -1,13 +1,13 @@
 import Vue from 'vue'
 import App from './App.vue'
-// 引入element-ui组件
+// 引入element-ui组件 需要黑窗口下载  npm i element-ui
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-// 引入路由用@可以自动去文件夹下找文件
+// 引入路由用@可以自动去文件夹下找index文件
 import router from '@/router'
 // 引入全局样式
 import '@/style/index.less'
-// 引入axios
+// 引入axios需要黑窗口下载
 import axios from 'axios'
 Vue.prototype.$http = axios
 
