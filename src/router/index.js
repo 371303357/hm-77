@@ -11,6 +11,7 @@ import Welcome from '@/view/welcome'
 import Article from '@/view/article'
 // 引入404页面
 import NotFound from '@/view/404'
+import store from '@/store'
 Vue.use(VueRouter)
 
 const router = new VueRouter({
@@ -28,5 +29,16 @@ const router = new VueRouter({
     { path: '*', name: '404', component: NotFound }
 
   ]
+})
+// 前置导航守卫
+router.beforeEach((to, from, next) => {
+  // // 判断是不是登录路由
+  // if (to.path === '/login') return next()
+  // // 判断是否登录
+  // if (!store.getUser().token) return next('/login')
+  // next()
+  // 简化写法
+  if (to.path !== '/login' && !store.getUser().token) return next('/login')
+  next()
 })
 export default router

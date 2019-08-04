@@ -8,7 +8,7 @@ import router from '@/router'
 // 引入全局样式
 import '@/style/index.less'
 // 引入axios需要黑窗口下载
-import axios from 'axios'
+import axios from '@/api'
 Vue.prototype.$http = axios
 
 Vue.config.productionTip = false
