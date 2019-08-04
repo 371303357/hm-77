@@ -24,8 +24,8 @@
     </el-card>
   </div>
 </template>
-
 <script>
+import store from '@/store'
 export default {
   data () {
     // validator 自定义校验规则
@@ -65,10 +65,13 @@ export default {
             )
             .then(res => {
               // 跳首页
-              console.log(res.data)
+              // console.log(res.data)
+              // 储存用户信息
+              store.setUser(res.data.data)
               this.$router.push({ path: '/' })
             })
             .catch(() => {
+              // console.log(err)
               this.$message.error('手机号或验证码错误')
             })
         }
