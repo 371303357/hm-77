@@ -5,7 +5,7 @@
         <!-- <el-breadcrumb separator-class="el-icon-arrow-right">
           <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
           <el-breadcrumb-item>内容管理</el-breadcrumb-item>
-        </el-breadcrumb> -->
+        </el-breadcrumb>-->
         <my-bread>内容管理</my-bread>
       </div>
       <el-form label-width="80px" size="small">
@@ -37,16 +37,26 @@
             end-placeholder="结束日期"
           ></el-date-picker>
         </el-form-item>
-         <el-form-item><el-button type="primary">筛选</el-button></el-form-item>
+        <el-form-item>
+          <el-button type="primary">筛选</el-button>
+        </el-form-item>
       </el-form>
     </el-card>
-
+    <el-card>
+      <div slot="header">根据筛选条件共查询到0条结果</div>
+      <!-- 表格组件 -->
+      <el-table :data="articles">
+        <el-table-column prop label="封面"></el-table-column>
+      </el-table>
+      <!-- 分页组件 -->
+      <div style="text-align:center ; margin-top:20px">
+        <el-pagination background layout="prev, pager, next" :total="1000"></el-pagination>
+      </div>
+    </el-card>
   </div>
 </template>
 <script>
-
 export default {
-
   // 处理数据提交给后端
   data () {
     return {
@@ -57,11 +67,15 @@ export default {
       // 频道下拉数据
       channelOptions: [{ value: 1, label: 'js' }],
       // 日期数据
-      dataArr: []
+      dataArr: [],
+      articles: []
     }
   }
 }
 </script>
 
-<style>
+<style scope>
+.el-card {
+  margin-top: 20px;
+}
 </style>
