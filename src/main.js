@@ -9,7 +9,11 @@ import router from '@/router'
 import '@/style/index.less'
 // 引入axios需要黑窗口下载
 import axios from '@/api'
+
+// 使用自己定义的插件
+import myCom from '@/components/index.js'
 Vue.prototype.$http = axios
+Vue.use(myCom)
 
 Vue.config.productionTip = false
 
