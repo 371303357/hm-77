@@ -19,14 +19,15 @@
           </el-radio-group>
         </el-form-item>
         <el-form-item  label="频道：">
-          <el-select clearable  @clear="handelClear" v-model="reqParams.channel_id" placeholder="请选择">
+          <my-channel v-model=" reqParams.channel_id"></my-channel>
+          <!-- <el-select clearable  @clear="handelClear" v-model="reqParams.channel_id" placeholder="请选择">
             <el-option
               v-for="item in channelOptions"
               :key="item.id"
               :label="item.name"
               :value="item.id"
             ></el-option>
-          </el-select>
+          </el-select> -->
         </el-form-item>
         <el-form-item label="日期：">
           <el-date-picker
@@ -117,8 +118,8 @@ export default {
     }
   },
   created () {
-    // 获取频道下拉选项
-    this.getChanneloptions()
+    // // 获取频道下拉选项
+    // this.getChanneloptions()
     this.getArticles()
   },
   methods: {
@@ -152,10 +153,10 @@ export default {
       }
     },
     // 筛选clearable 之后触发的clear事件
-    handelClear () {
-      this.reqParams.channel_id = null
-      this.getArticles()
-    },
+    // handelClear () {
+    //   this.reqParams.channel_id = null
+    //   this.getArticles()
+    // },
     // 筛选查询
     search () {
       // 筛选之后默认第一页
@@ -169,14 +170,14 @@ export default {
       this.reqParams.page = newPage
       this.getArticles()
     },
-    async getChanneloptions () {
-      // 请求地址和方式从文档接口获取channels articles
-      const {
-        data: { data }
-      } = await this.$http.get('channels')
-      // data.channels   data.result 是接口文档后端需要提供的，
-      this.channelOptions = data.channels
-    },
+    // async getChanneloptions () {
+    //   // 请求地址和方式从文档接口获取channels articles
+    //   const {
+    //     data: { data }
+    //   } = await this.$http.get('channels')
+    //   // data.channels   data.result 是接口文档后端需要提供的，
+    //   this.channelOptions = data.channels
+    // },
 
     async getArticles () {
       // axios get传参，第二个参数就是需要传入的，格式为对象{params:参数对象}，发送请求后自当拼接到地址栏后面
