@@ -13,6 +13,8 @@ import Article from '@/view/article'
 import Image from '@/view/image'
 // 引入404页面
 import NotFound from '@/view/404'
+// 引入发布页面
+import Publish from '@/view/publish'
 import store from '@/store'
 Vue.use(VueRouter)
 
@@ -25,7 +27,8 @@ const router = new VueRouter({
       children: [
         { path: '/', name: 'welcome', component: Welcome },
         { path: '/article', name: 'article', component: Article },
-        { path: '/image', name: 'image', component: Image }
+        { path: '/image', name: 'image', component: Image },
+        { path: '/publish', name: 'publish', component: Publish }
 
       ]
     },
