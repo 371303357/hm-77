@@ -9,6 +9,8 @@ import Home from '@/view/home'
 import Welcome from '@/view/welcome'
 // 引入artical页
 import Article from '@/view/article'
+// 引入素材网页
+import Image from '@/view/image'
 // 引入404页面
 import NotFound from '@/view/404'
 import store from '@/store'
@@ -22,7 +24,8 @@ const router = new VueRouter({
       component: Home,
       children: [
         { path: '/', name: 'welcome', component: Welcome },
-        { path: '/article', name: 'article', component: Article }
+        { path: '/article', name: 'article', component: Article },
+        { path: '/image', name: 'image', component: Image }
 
       ]
     },

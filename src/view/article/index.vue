@@ -190,7 +190,7 @@ export default {
 }
 </script>
 
-<style scope>
+<style scoped>
 .el-card {
   margin-bottom: 20px;
 }
