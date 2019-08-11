@@ -3,6 +3,7 @@
 // import MyTest from '@/components/my-test'
 import MyBread from '@/components/my-bread'
 import MyChannel from '@/components/my-channel'
+import MyImage from '@/components/my-image'
 
 // vue 插件暴露一个对象 对象中必须有一个选项 install
 export default {
@@ -10,5 +11,6 @@ export default {
     // Vue.component(MyTest.name,MyTest)
     Vue.component(MyBread.name, MyBread)
     Vue.component(MyChannel.name, MyChannel)
+    Vue.component(MyImage.name, MyImage)
   }
 }

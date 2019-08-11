@@ -28,3 +28,6 @@ body {
   height: 178px;
   display: block;
 }
+.my-image .el-dialog__body {
+  padding: 0 20px;
+}
