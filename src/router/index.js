@@ -17,6 +17,8 @@ import NotFound from '@/view/404'
 import Publish from '@/view/publish'
 // 引入评论管理
 import Comment from '@/view/comment'
+// 引入个人设置
+import Setting from '@/view/setting'
 
 import store from '@/store'
 Vue.use(VueRouter)
@@ -32,7 +34,8 @@ const router = new VueRouter({
         { path: '/article', name: 'article', component: Article },
         { path: '/image', name: 'image', component: Image },
         { path: '/publish', name: 'publish', component: Publish },
-        { path: '/comment', name: 'comment', component: Comment }
+        { path: '/comment', name: 'comment', component: Comment },
+        { path: '/setting', name: 'setting', component: Setting }
 
       ]
     },
