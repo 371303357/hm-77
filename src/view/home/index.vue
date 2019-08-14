@@ -31,7 +31,7 @@
           <i class="el-icon-chat-dot-round"></i>
           <span slot="title">评论管理</span>
         </el-menu-item>
-        <el-menu-item index=" /fans">
+        <el-menu-item index="/fans">
           <i class="el-icon-present"></i>
           <span slot="title">粉丝管理</span>
         </el-menu-item>
@@ -78,14 +78,14 @@ export default {
   created () {
     // 更新名字
     eventBus.$on('updateName', (name) => {
-      this.name = name
+      this.nae = name
     })
     // 更新头像
-    eventBus.$on('updatePhoto', (photo) => {
+    eventBus.$on('uploadPhoto', (photo) => {
       this.photo = photo
     })
     const user = store.getUser()
-    this.nae = user.nae
+    this.nae = user.name
     this.photo = user.photo
   },
   methods: {

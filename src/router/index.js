@@ -19,6 +19,8 @@ import Publish from '@/view/publish'
 import Comment from '@/view/comment'
 // 引入个人设置
 import Setting from '@/view/setting'
+// 引入粉丝设置
+import Fans from '@/view/fans'
 
 import store from '@/store'
 Vue.use(VueRouter)
@@ -35,7 +37,8 @@ const router = new VueRouter({
         { path: '/image', name: 'image', component: Image },
         { path: '/publish', name: 'publish', component: Publish },
         { path: '/comment', name: 'comment', component: Comment },
-        { path: '/setting', name: 'setting', component: Setting }
+        { path: '/setting', name: 'setting', component: Setting },
+        { path: '/fans', name: 'fans', component: Fans }
 
       ]
     },
